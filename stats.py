@@ -11,3 +11,16 @@ def unique_char_count(book):
         else:
             unique_char_dict[i] = 1
     return unique_char_dict
+
+def sort_on(items):
+    return items["num"]
+
+def list_dict(book_dict):
+    dict_list = []
+    for i in book_dict:
+        dict_list.append({"char":i,"num":book_dict[i]})
+    return dict_list
+
+def sort_dict(list):
+    list.sort(reverse=True, key=sort_on)
+    return list
