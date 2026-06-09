@@ -24,3 +24,15 @@ def list_dict(book_dict):
 def sort_dict(list):
     list.sort(reverse=True, key=sort_on)
     return list
+
+def sort_on2(char: tuple[str,int]) -> int:
+    return char[1]
+
+def chars_dict_to_sorted_list(char_d: dict[str,int]) -> list:
+    temp_l = []
+    for i in char_d.keys():
+        count = char_d[i]
+        tup = (i, count)
+        temp_l.append(tup)
+    sorted_l = sorted(temp_l, key=sort_on2, reverse=True)
+    return sorted_l
